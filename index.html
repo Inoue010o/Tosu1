@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>鳥栖市紹介サイト</title>
+		<!-- Google Fonts: 日本語対応フォント（本文:Noto Sans JP, 見出し:Merriweather） -->
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+		<!-- Swiper CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+		<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="wrap">
+	<header>
+		<h1><a href="index.html">鳥栖市（Tosu）</a></h1>
+
+		<input type="checkbox" id="navBtn">  
+		<label for="navBtn" class="open"><span></span></label>
+
+		<nav>
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">鳥栖市について</a></li>
+				<li class="nav-heading">おすすめスポット</li>
+				<li><a href="park.html">公園・緑地</a></li>
+				<li><a href="shopping.html">ショッピングモール</a></li>
+				<li><a href="gourmet.html">グルメ</a></li>
+				<li><a href="history.html">歴史・文化</a></li>
+				<li><a href="facility.html">施設</a></li>
+			</ul>
+		</nav>
+		<div class="hero">
+			<picture>
+				<source media="(max-width: 599px)" srcset="images/K468_Original.jpg">
+				<source media="(min-width: 600px)" srcset="images/K468_Original.jpg">
+				<img src="images/K468_Original.jpg" alt="鳥栖の風景">
+			</picture>
+				<div class="hero-text">
+					<h2>自然とアクセスの良さが魅力の街 — 鳥栖市</h2>
+					<p>九州の交通の要所。見どころを紹介します。</p>
+					<a class="cta" href="about.html">詳しく見る</a>
+				</div>
+			</div>
+	</header>
+
+	<main>
+		<section class="intro">
+			<h2>鳥栖市について</h2>
+			<p>鳥栖市は佐賀県の南東部に位置し、九州の交通が交差する要所です。自然や公園、ショッピングエリアが程よく共存しています。</p>
+		</section>
+
+		<section class="spots">
+			<h2>おすすめスポット</h2>
+			<div class="swiper spotsSwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<article class="card">
+							<div class="swiper cardSwiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="images/20200621_184008 2.jpg" alt="公園等の写真1">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/square.png" alt="公園等の写真2">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/map-placeholder.svg" alt="公園等の写真3">
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+							<h3><a href="park.html">公園・緑地</a></h3>
+							<p>家族で楽しめる緑豊かな公園があります。</p>
+						</article>
+					</div>
+					<div class="swiper-slide">
+						<article class="card">
+							<div class="swiper cardSwiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="images/20200621_184008 2.jpg" alt="ショッピングの写真1">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/square.png" alt="ショッピングの写真2">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/map-placeholder.svg" alt="ショッピングの写真3">
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+							<h3><a href="shopping.html">ショッピングモール</a></h3>
+							<p>アウトレットや商業施設でショッピングが楽しめます。</p>
+						</article>
+					</div>
+					<div class="swiper-slide">
+						<article class="card">
+							<div class="swiper cardSwiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="images/20200621_184008 2.jpg" alt="グルメの写真1">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/square.png" alt="グルメの写真2">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/map-placeholder.svg" alt="グルメの写真3">
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+							<h3><a href="gourmet.html">グルメ</a></h3>
+							<p>地元の名物やおすすめ飲食店を紹介します。</p>
+						</article>
+					</div>
+					<div class="swiper-slide">
+						<article class="card">
+							<div class="swiper cardSwiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="images/20200621_184008 2.jpg" alt="歴史の写真1">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/square.png" alt="歴史の写真2">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/map-placeholder.svg" alt="歴史の写真3">
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+							<h3><a href="history.html">歴史・文化</a></h3>
+							<p>地域の祭りや歴史的スポットも魅力の一つです。</p>
+						</article>
+					</div>
+					<div class="swiper-slide">
+						<article class="card">
+							<div class="swiper cardSwiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<img src="images/RIMG_0498.jpg" alt="施設の写真1">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/square.png" alt="施設の写真2">
+									</div>
+									<div class="swiper-slide">
+										<img src="images/map-placeholder.svg" alt="施設の写真3">
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+							<h3><a href="facility.html">施設</a></h3>
+							<p>鳥栖市の公共施設やスポーツ施設をご紹介します。</p>
+						</article>
+					</div>
+				</div>
+				<!-- ページネーション -->
+				<div class="swiper-pagination"></div>
+				<!-- ナビゲーションボタン -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>© My Site </p>
+	</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="nav.js"></script>
+<script src="scroll-animation.js"></script>
+<script src="swiper-init.js"></script>
+</body>
+
+</html>

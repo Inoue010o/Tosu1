@@ -1,0 +1,712 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+body {
+  /* body font: Noto Sans JP (added via Google Fonts) */
+  font-family: 'Noto Sans JP', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.7;
+  color: #2d3748;
+  height: 100%;
+  background: var(--muted);
+}
+
+/* headings: Merriweather for an elegant feel */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', 'Noto Sans JP', serif;
+}
+
+body#about {
+  background: #EEE;
+}
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* site color palette for Tosu-style */
+:root{
+  --primary:#2c5f7f; /* refined deep blue */
+  --accent:#5fad63;  /* vibrant green accent */
+  --muted:#f8faf9;
+  --card-bg:#ffffff;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* header */
+
+header {
+  position: relative;
+}
+
+header h1 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background-image: url('images/20200621_184008\ 2.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: 0.18em;
+  font-family: 'Noto Sans JP', sans-serif;
+  text-transform: uppercase;
+  padding: 2rem 1.5rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  border-bottom: 2px solid rgba(95, 173, 99, 0.6);
+}
+
+header h1 a:hover {
+  background: rgba(255,255,255,0.05);
+  letter-spacing: 0.22em;
+  border-bottom-color: rgba(95, 173, 99, 0.9);
+}
+
+header h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 95, 127, 0.75);
+  z-index: 0;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.2);
+}
+
+header h1 a {
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.3rem 0;
+}
+
+header h1 a:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+#navBtn {
+  display: none;
+}
+
+.open {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 2px;
+}
+
+/*humburger button*/
+
+.open::before,
+.open::after {
+  content: "";
+}
+
+.open span,
+.open::before,
+.open::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 30%;
+  width: 40%;
+  height: 2px;
+  background: #fff;
+  transition: transform .35s ease, background .35s ease, opacity .2s ease;
+}
+
+.open::before {
+  transform: translateY(-8px);
+}
+
+.open::after {
+  transform: translateY(8px);
+}
+
+/*close button*/
+#navBtn:checked + .open {
+  background: transparent;
+}
+
+#navBtn:checked + .open span {
+  opacity: 0;
+}
+
+#navBtn:checked + .open::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#navBtn:checked + .open::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+#navBtn:checked + .open span,
+#navBtn:checked + .open::before,
+#navBtn:checked + .open::after {
+  border-bottom-color: #EEE;
+}
+
+nav {
+  /* mobile slide-in nav */
+  height: 100vh;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: -300px;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, .75);
+  color: #fff;
+  transform: translateX(0);
+  transition: transform .4s cubic-bezier(.2,.9,.2,1), opacity .3s ease;
+  overflow: hidden;
+}
+
+nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/20200621_184008\ 2.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+  animation: navSlideshow 20s ease-in-out infinite;
+}
+
+@keyframes navSlideshow {
+  0%, 100% {
+    background-position: center top;
+    transform: scale(1);
+  }
+  25% {
+    background-position: center center;
+    transform: scale(1.1);
+  }
+  50% {
+    background-position: center bottom;
+    transform: scale(1);
+  }
+  75% {
+    background-position: center center;
+    transform: scale(1.1);
+  }
+}
+
+#navBtn:checked ~ nav {
+  display: block;
+  transform: translateX(-300px);
+}
+
+nav ul {
+  list-style: none;
+  padding-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+nav ul li {
+  /* display: inline-block; */
+  margin: 0 10px;
+  padding: 10px 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #EEE;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background .25s ease, transform .15s ease;
+}
+
+nav ul li a:focus,
+nav ul li a:hover{
+  background: rgba(255,255,255,0.08);
+  transform: translateX(-4px);
+}
+
+/* Active page highlight */
+nav ul li.active > a {
+  background: rgba(255,255,255,0.12);
+  border-left: 3px solid var(--accent);
+  padding-left: 9px;
+}
+
+nav ul li.nav-heading.active {
+  background: rgba(255,255,255,0.08);
+  border-left: 3px solid var(--accent);
+  padding-left: 11px;
+}
+
+/* Nav heading & subnav (block-style for mobile, inline for desktop) */
+nav ul li.nav-heading {
+  display: block;
+  text-align: left;
+  margin: 8px 12px;
+  padding: 12px 14px 8px 14px;
+  font-weight: 800;
+  color: var(--accent);
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  position: relative;
+  font-size: 1rem;
+}
+
+/* when the group is open (child page active) show white dot */
+nav ul li.nav-heading .subnav li.active > a,
+nav ul li.active > a {
+  background: rgba(255,255,255,0.09);
+}
+
+/* make active heading more prominent when open */
+nav ul li.nav-heading.open {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
+nav ul li.nav-heading .subnav {
+  margin-top: 6px;
+  padding: 6px 10px 8px 0;
+  background: transparent;
+  border-radius: 6px;
+}
+
+nav ul li.nav-heading .subnav li {
+  margin: 6px 0;
+}
+
+nav ul li.nav-heading .subnav li a {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+}
+
+nav ul li.nav-heading .subnav li a:hover{
+  background: rgba(255,255,255,0.06);
+  transform: none;
+}
+
+/* スクロールアニメーション */
+.animate-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-element.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* カードごとに遅延を追加 */
+.card:nth-child(1) { transition-delay: 0s; }
+.card:nth-child(2) { transition-delay: 0.1s; }
+.card:nth-child(3) { transition-delay: 0.2s; }
+.card:nth-child(4) { transition-delay: 0.3s; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; }
+  .animate-element { opacity: 1; transform: translateY(0); }
+}
+
+/* hero */
+.hero{
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+.hero img{ display:block; width:100%; height:100%; object-fit: cover; object-position: center center; filter:brightness(.92); transition: transform 0.3s ease; }
+.hero:hover img{ transform: scale(1.03); }
+.hero-text{
+  position:absolute;
+  left:1.25rem;
+  bottom:1.25rem;
+  color:#fff;
+  text-shadow:0 2px 6px rgba(0,0,0,.4);
+}
+.hero-text h2{ font-size:1.8rem; margin-bottom:.5rem; font-weight:700; line-height:1.3; }
+.hero-text p{ opacity:.95; margin-bottom:.8rem; font-size:1.05rem; }
+.hero-text .cta{
+  display:inline-block; padding:.65rem 1.2rem; background:var(--accent); color:#fff; border-radius:8px; text-decoration:none; font-weight:600;
+  box-shadow: 0 4px 12px rgba(95,173,99,0.3);
+  transition: all 0.3s ease;
+}
+.hero-text .cta:hover{
+  background:#4a9d4f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(95,173,99,0.4);
+}
+
+/* main contents */
+main {
+  padding: 1rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+section {
+  padding: 2.5rem 1.5rem;
+  background: transparent;
+  width: 100%;
+}
+
+section.intro{
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+
+section.intro h2{
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+section.spots h2{
+  color: var(--primary);
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Swiper スタイル */
+.spotsSwiper {
+  width: 100%;
+  padding: 20px 40px 50px;
+  position: relative;
+}
+
+.spotsSwiper .swiper-slide {
+  height: auto;
+}
+
+.spotsSwiper .swiper-button-prev,
+.spotsSwiper .swiper-button-next {
+  color: var(--primary);
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.spotsSwiper .swiper-button-prev:after,
+.spotsSwiper .swiper-button-next:after {
+  font-size: 20px;
+}
+
+/* カード内スライダー */
+.cardSwiper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.cardSwiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardSwiper .swiper-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+.cardSwiper:hover .swiper-slide img {
+  transform: scale(1.05);
+}
+
+.cardSwiper .swiper-pagination {
+  bottom: 8px;
+}
+
+.cardSwiper .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.7;
+  width: 8px;
+  height: 8px;
+}
+
+.cardSwiper .swiper-pagination-bullet-active {
+  background: var(--accent);
+  opacity: 1;
+}
+
+.gallery h2{
+  color: var(--primary);
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.gallery p{
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #718096;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.cards{ padding-top:0; }
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card{ 
+  background:var(--card-bg); 
+  border-radius:12px; 
+  padding:16px; 
+  box-shadow:var(--shadow-sm); 
+  transition: all 0.3s ease;
+  overflow:hidden;
+}
+
+.card:hover{ 
+  transform: translateY(-4px); 
+  box-shadow:var(--shadow-md);
+}
+.card img{
+  border-radius:8px;
+  transition: transform 0.3s ease;
+}
+.card:hover img{
+  transform: scale(1.05);
+}
+.card h3{ margin:12px 0 8px 0; color:var(--primary); font-size:1.15rem; }
+.card h3 a{
+  color:var(--primary);
+  transition: color 0.3s ease;
+}
+.card h3 a:hover{
+  color:var(--accent);
+}
+.about-grid .card{ padding:18px }
+.map-placeholder{ background:var(--muted); height:220px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#666 }
+
+/* responsive Google Maps embed */
+.map-responsive{ position:relative; width:100%; padding-bottom:56.25%; /* 16:9 */ height:0; overflow:hidden; border-radius:8px; }
+.map-responsive iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+/* local map image (shown when opening file://) */
+#map-local{ position:absolute; top:0; left:0; width:100%; height:100%; display:none; }
+.map-fallback{ display:none; margin-top:8px; }
+
+/* responsive tweaks for header/nav */
+/* header: use primary blue and ensure contrast */
+header{ background:var(--primary); color:#fff; }
+header h1 a{ color:#fff; font-weight:700; text-decoration:none }
+
+/* footer accent */
+footer{ background:var(--primary); }
+
+/* footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+/*タブレット用*/
+@media all and (min-width: 600px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*コンピュータ用*/
+@media all and (min-width: 1025px) {
+  header h1 {
+    font-size: 4rem;
+  }
+
+  nav {
+    display: block;
+    height: auto;
+    width: 100%;
+    position: static;
+    background-color: transparent;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    padding: 0;
+  }
+
+  nav ul li a {
+    color: #fff;
+  }
+
+  /* Desktop: make grouped nav items inline again */
+  nav ul li.nav-heading {
+    background: transparent;
+    margin: 0 10px;
+    padding: 0;
+  }
+
+  nav ul li.nav-heading .subnav {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 0;
+    background: transparent;
+  }
+
+  nav ul li.nav-heading .subnav li { display: inline-block; margin: 0 8px; }
+
+  nav ul li.nav-heading .subnav li a { padding: 0; }
+
+  #navBtn,
+  .open {
+    display: none;
+  }
+
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Uniform card sizing for facility page */
+.gallery .container .card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.gallery .container .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery .container .card h3 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  padding: 1rem 1rem 0.5rem;
+  margin: 0;
+}
+
+.gallery .container .card p {
+  color: #666;
+  padding: 0.5rem 1rem 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Vertical Cards Layout */
+.vertical-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  align-items: center;
+}
+
+.vertical-card {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vertical-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.vertical-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.vertical-card h3 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  padding: 1rem 1rem 0.5rem;
+  margin: 0;
+}
+
+.vertical-card p {
+  color: #666;
+  padding: 0.5rem 1rem 1rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Frespo card image enlarged display area */
+.card img[src="images/i.jpg"] {
+  height: 500px;
+}

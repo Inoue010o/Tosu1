@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人気のカフェ | 鳥栖市紹介サイト</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header>
+      <h1><a href="index.html">鳥栖市(Tosu)</a></h1>
+
+      <input type="checkbox" id="navBtn">
+      <label for="navBtn" class="open"><span></span></label>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">鳥栖市について</a></li>
+          <li class="nav-heading">おすすめスポット</li>
+          <li><a href="park.html">公園・緑地</a></li>
+          <li><a href="shopping.html">ショッピングモール</a></li>
+          <li><a href="gourmet.html">グルメ</a></li>
+          <li><a href="history.html">歴史・文化</a></li>
+          <li><a href="facility.html">施設</a></li>
+        </ul>
+      </nav>
+        <div class="hero">
+          <picture>
+            <source media="(max-width: 599px)" srcset="images/K468_Original.jpg">
+            <source media="(min-width: 600px)" srcset="images/K468_Original.jpg">
+            <img src="images/K468_Original.jpg" alt="人気のカフェ">
+          </picture>
+          <div class="hero-text">
+            <h2>人気のカフェ</h2>
+            <p>おしゃれな空間でくつろぐ</p>
+          </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h2>人気のカフェについて</h2>
+        <p>鳥栖市内には個性豊かなカフェが点在しています。こだわりのコーヒーやスイーツを楽しめる空間で、ゆったりとした時間をお過ごしください。</p>
+      </section>
+
+      <section class="gallery">
+        <h2>おすすめのカフェ</h2>
+        <div class="vertical-cards">
+          <article class="card vertical-card">
+            <img src="images/square.png" alt="カフェ1">
+            <h3>自家焙煎コーヒー</h3>
+            <p>こだわりの豆を使った本格コーヒーが味わえます。</p>
+          </article>
+          <article class="card vertical-card">
+            <img src="images/square.png" alt="カフェ2">
+            <h3>スイーツカフェ</h3>
+            <p>季節のフルーツを使った絶品スイーツが人気。</p>
+          </article>
+          <article class="card vertical-card">
+            <img src="images/square.png" alt="カフェ3">
+            <h3>古民家カフェ</h3>
+            <p>落ち着いた雰囲気の古民家でゆったりと。</p>
+          </article>
+        </div>
+        <p><a href="gourmet.html">← グルメ一覧に戻る</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© My Site </p>
+    </footer>
+  </div>
+  <script src="nav.js"></script>
+</body>
+
+</html>

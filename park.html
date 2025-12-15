@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公園・緑地ギャラリー | 鳥栖市紹介サイト</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header>
+      <h1><a href="index.html">鳥栖市（Tosu）</a></h1>
+
+      <input type="checkbox" id="navBtn">
+      <label for="navBtn" class="open"><span></span></label>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">鳥栖市について</a></li>
+          <li class="nav-heading">おすすめスポット</li>
+          <li><a href="park.html">公園・緑地</a></li>
+          <li><a href="shopping.html">ショッピングモール</a></li>
+          <li><a href="gourmet.html">グルメ</a></li>
+          <li><a href="history.html">歴史・文化</a></li>
+          <li><a href="facility.html">施設</a></li>
+        </ul>
+      </nav>
+        <div class="hero">
+          <picture>
+            <source media="(max-width: 599px)" srcset="images/K468_Original.jpg">
+            <source media="(min-width: 600px)" srcset="images/K468_Original.jpg">
+            <img src="images/K468_Original.jpg" alt="鳥栖の風景">
+          </picture>
+          <div class="hero-text">
+            <h2>公園・緑地</h2>
+            <p>家族で楽しめる緑豊かな公園があります。</p>
+          </div>
+        </div>
+    </header>
+
+    <main>
+      <section class="gallery">
+        <h2>公園・緑地の写真</h2>
+        <p>以下はサンプル画像です。実際の画像ファイルがあれば `images/` フォルダに追加してください。</p>
+        <div class="container">
+          <a href="park-urban.html" class="card-link">
+            <article class="card">
+              <img src="images/KIMG_0627.png" alt="公園写真1">
+              <h3>旭山公園</h3>
+              <p>季節の草花が美しい公園</p>
+            </article>
+          </a>
+          <a href="park-green.html" class="card-link">
+            <article class="card">
+              <img src="images/KIMG_0799.jpeg" alt="公園写真2">
+              <h3>田代公園</h3>
+              <p>歴史と自然が融合した公園</p>
+            </article>
+          </a>
+          <a href="park-playground.html" class="card-link">
+            <article class="card">
+              <img src="images/KIMG_0588.jpg" alt="公園写真3">
+              <h3>鳥栖市中央公園</h3>
+              <p>市民の憩いの場</p>
+            </article>
+          </a>
+          <a href="park-nature.html" class="card-link">
+            <article class="card">
+              <img src="images/square.png" alt="公園写真4">
+              <h3>御手水の滝</h3>
+              <p>自然の景観を感じられる滝</p>
+            </article>
+          </a>
+          <a href="park-urban.html" class="card-link">
+            <article class="card">
+              <img src="images/square.png" alt="公園写真5">
+              <h3>河内ダム</h3>
+              <p>水のさざめきが心地よい</p>
+            </article>
+          </a>
+          <a href="park-green.html" class="card-link">
+            <article class="card">
+              <img src="images/square.png" alt="公園写真6">
+              <h3>コカコーラ鳥栖市民の森</h3>
+              <p>豊かな緑に包まれた森</p>
+            </article>
+          </a>
+        </div>
+        <p><a href="index.html">← 戻る</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© My Site </p>
+    </footer>
+  </div>
+  <script src="nav.js"></script>
+</body>
+
+</html>
