@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>名物料理 | 鳥栖市紹介サイト</title>
+  <title>夾を語れ | 鳥栾市紹介サイト</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,8 +36,8 @@
             <img src="images/K468_Original.jpg" alt="名物料理">
           </picture>
           <div class="hero-text">
-            <h2>名物料理</h2>
-            <p>鳥栖の味を堪能</p>
+            <h2>夾を語れ</h2>
+            <p>駆近くの居酒屋</p>
           </div>
         </div>
     </header>
@@ -49,24 +49,26 @@
       </section>
 
       <section class="gallery">
-        <h2>おすすめの名物</h2>
-        <div class="vertical-cards">
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="名物1">
-            <h3>佐賀牛</h3>
-            <p>最高級ブランド牛「佐賀牛」を味わえるお店。</p>
+        <h2>夢を語れについて</h2>
+        <div class="blog-posts">
+          <article class="blog-post">
+            <img src="images/GIMG_2064.jpg" alt="夢を語れの風景1">
+            <h3>駅近くの居酒屋</h3>
+            <p>鳥栖駅の近くに位置し、多くの利用客に愛されています。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="名物2">
-            <h3>鳥栖ラーメン</h3>
-            <p>地元で愛される味わい深いラーメン。</p>
+          <article class="blog-post">
+            <img src="images/GIMG_2058.jpeg" alt="夢を語れの風景2">
+            <h3>こだわりの料理</h3>
+            <p>地元の新鮮な食材を使った特別な料理を提供しています。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="名物3">
-            <h3>郷土料理</h3>
-            <p>伝統的な佐賀の郷土料理が楽しめます。</p>
+          <article class="blog-post">
+            <img src="images/GIMG_2061.jpeg" alt="夢を語れの風景3">
+            <h3>アットホームな雰囲気</h3>
+            <p>温かみのある空間で、お客様との交流を大切にしています。</p>
           </article>
         </div>
+        <p style="text-align: center; color: #ff6b6b; font-weight: bold; margin-top: 20px;">--- 更新中 ---</p>
+        <p style="text-align: center; color: #ff6b6b; font-weight: bold;">📝 このページは更新中です</p>
         <p><a href="gourmet.html">← グルメ一覧に戻る</a></p>
       </section>
     </main>
@@ -74,8 +76,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>

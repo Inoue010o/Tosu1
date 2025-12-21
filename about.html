@@ -45,6 +45,7 @@
 		<section class="about-hero">
 			<h2>鳥栖市の紹介</h2>
 			<p>鳥栖市は佐賀県南東部に位置し、交通の利便性と自然が調和したまちです。ここでは文化、観光、アクセス情報を掲載します。</p>
+			<img src="images/RIMG_0553.jpg" alt="鳥栖市の風景" style="max-width: 100%; height: auto; margin-top: 20px;">
 		</section>
 
 		<section class="about-grid container">
@@ -58,7 +59,7 @@
 			</div>
 			<div class="card">
 				<h3>アクセス</h3>
-				<p>九州新幹線や長距離道路でのアクセスが良く、福岡市や熊本方面へも便利です。</p>
+				<p>九州の交通の要所として、電車やバスでのアクセスが充実しています。</p>
 			</div>
 		</section>
 
@@ -74,6 +75,7 @@
 			</div>
 			<p class="map-fallback" style="display:none;">地図が表示されない場合は、<a href="https://www.google.com/maps?q=%E9%B3%A5%E6%A0%93%E5%B8%82%2C%20%E4%BD%90%E8%B3%80%E7%9C%8C" target="_blank" rel="noopener">Google Maps で開く</a> をクリックしてください。</p>
 		</section>
+
 	</main>
 
 	<footer>
@@ -103,7 +105,32 @@
 		}
 	})();
 </script>
+
+<!-- トップに戻るボタン -->
+<button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
+
 <script src="nav.js"></script>
+
+<script>
+// トップに戻るボタンの表示/非表示制御
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+const wrap = document.getElementById('wrap');
+
+wrap.addEventListener('scroll', () => {
+	if (wrap.scrollTop > 300) {
+		scrollToTopBtn.classList.add('show');
+	} else {
+		scrollToTopBtn.classList.remove('show');
+	}
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+	wrap.scrollTo({
+		top: 0,
+		behavior: 'smooth'
+	});
+});
+</script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>その他施設 | 鳥栖市紹介サイト</title>
+  <title>サロンパスアリーナ | 鳥栖市紹介サイト</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -33,11 +33,11 @@
           <picture>
             <source media="(max-width: 599px)" srcset="images/K468_Original.jpg">
             <source media="(min-width: 600px)" srcset="images/K468_Original.jpg">
-            <img src="images/K468_Original.jpg" alt="その他施設">
+            <img src="images/K468_Original.jpg" alt="サロンパスアリーナ">
           </picture>
           <div class="hero-text">
-            <h2>その他施設</h2>
-            <p>地域の多様なニーズに応える施設</p>
+            <h2>サロンパスアリーナ</h2>
+            <p>多目的スポーツ施設</p>
           </div>
         </div>
     </header>
@@ -49,24 +49,16 @@
       </section>
 
       <section class="gallery">
-        <h2>その他の施設</h2>
-        <div class="vertical-cards">
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="その他施設1">
-            <h3>子育て支援センター</h3>
-            <p>子育て相談や親子交流ができる施設。</p>
-          </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="その他施設2">
-            <h3>福祉センター</h3>
-            <p>高齢者や障がい者の福祉サービスを提供。</p>
-          </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="その他施設3">
-            <h3>国際交流センター</h3>
-            <p>多文化交流と国際理解を促進する施設。</p>
+        <h2>サロンパスアリーナについて</h2>
+        <div class="blog-posts">
+          <article class="blog-post">
+            <img src="images/RIMG_0584.jpg" alt="アリーナの風景1">
+            <h3>多皮的スポーツ施設</h3>
+            <p>サロンパスアリーナは多皮的スポーツ施設で、各種竞技上活動や竞技会賿が開催されます。</p>
           </article>
         </div>
+        <p style="text-align: center; color: #ff6b6b; font-weight: bold; margin-top: 20px;">--- 更新中 ---</p>
+        <p style="text-align: center; color: #ff6b6b; font-weight: bold;">📝 このページは更新中です</p>
         <p><a href="facility.html">← 施設一覧に戻る</a></p>
       </section>
     </main>
@@ -74,8 +66,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>

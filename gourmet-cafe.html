@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>人気のカフェ | 鳥栖市紹介サイト</title>
+  <title>ランプル台所 | 鳥栾市紹介サイト</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,37 +36,39 @@
             <img src="images/K468_Original.jpg" alt="人気のカフェ">
           </picture>
           <div class="hero-text">
-            <h2>人気のカフェ</h2>
-            <p>おしゃれな空間でくつろぐ</p>
+            <h2>ランプル台所</h2>
+            <p>こだわりの台所料理</p>
           </div>
         </div>
     </header>
 
     <main>
       <section class="intro">
-        <h2>人気のカフェについて</h2>
-        <p>鳥栖市内には個性豊かなカフェが点在しています。こだわりのコーヒーやスイーツを楽しめる空間で、ゆったりとした時間をお過ごしください。</p>
+        <h2>ランプル台所をこだわるとんかつ屋</h2>
+        <p>ランプル台所は、紅肉が自臺の高級とんかつ店です。機洋良い、サクサクとしたとんかつをつやしく撲いた一品の会理欅です。</p>
       </section>
 
       <section class="gallery">
-        <h2>おすすめのカフェ</h2>
-        <div class="vertical-cards">
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="カフェ1">
-            <h3>自家焙煎コーヒー</h3>
-            <p>こだわりの豆を使った本格コーヒーが味わえます。</p>
+        <h2>ランプル台所について</h2>
+        <div class="blog-posts">
+          <article class="blog-post">
+            <img src="images/GIMG_2056.jpeg" alt="ランプル台所の風景1">
+            <h3>こだわりのとんかつ</h3>
+            <p>厢逅肉を極り高まで洗練した肉質が特徴です。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="カフェ2">
-            <h3>スイーツカフェ</h3>
-            <p>季節のフルーツを使った絶品スイーツが人気。</p>
+          <article class="blog-post">
+            <img src="images/GIMG_2054.jpeg" alt="ランプル台所の風景2">
+            <h3>厢逅肉の旅</h3>
+            <p>大型窓口をくぐり、ゆったりお食事を楽しめます。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="カフェ3">
-            <h3>古民家カフェ</h3>
-            <p>落ち着いた雰囲気の古民家でゆったりと。</p>
+          <article class="blog-post">
+            <img src="images/GIMG_2055.jpeg" alt="ランプル台所の風景3">
+            <h3>曖丢い姫司的な民洋</h3>
+            <p>厢逅肉の旅をここよし、ゆぎて上道い一品を楽しみいただけます。</p>
           </article>
         </div>
+        <p style="text-align: center; color: #ff6b6b; font-weight: bold; margin-top: 20px;">--- 更新中 ---</p>
+        <p style="text-align: center; color: #ff6b6b; font-weight: bold;">📝 このページは更新中です</p>
         <p><a href="gourmet.html">← グルメ一覧に戻る</a></p>
       </section>
     </main>
@@ -74,8 +76,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>

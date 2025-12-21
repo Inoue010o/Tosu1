@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スポーツ施設 | 鳥栖市紹介サイト</title>
+  <title>鳥栾市民体育館 | 鳥栾市紹介サイト</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,8 +36,8 @@
             <img src="images/K468_Original.jpg" alt="スポーツ施設">
           </picture>
           <div class="hero-text">
-            <h2>スポーツ施設</h2>
-            <p>健康づくりとスポーツの拠点</p>
+            <h2>鳥栾市民体育館</h2>
+            <p>各種スポーツイベントの開催会場</p>
           </div>
         </div>
     </header>
@@ -49,22 +49,22 @@
       </section>
 
       <section class="gallery">
-        <h2>主なスポーツ施設</h2>
-        <div class="vertical-cards">
-          <article class="card vertical-card">
-            <img src="images/IMG_0499.jpg" alt="スポーツ施設1">
-            <h3>総合体育館</h3>
-            <p>バスケットボールやバレーボールなど室内スポーツに対応。</p>
+        <h2>鳥栖市民体育館について</h2>
+        <div class="blog-posts">
+          <article class="blog-post">
+            <img src="images/RIMG_0506.jpg" alt="体育館の風景1">
+            <h3>各種スポーツイベントを開催</h3>
+            <p>鳥栖市民体育館はバスケットボール、バレーボールなど各種スポーツイベントが開催されます。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="スポーツ施設2">
-            <h3>陸上競技場</h3>
-            <p>本格的なトラックとフィールドを備えた競技場。</p>
+          <article class="blog-post">
+            <img src="images/IMG_0507.jpeg" alt="体育館の風景2">
+            <h3>充実した設備</h3>
+            <p>賀一側な設備を時きております。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="スポーツ施設3">
-            <h3>温水プール</h3>
-            <p>年間を通して利用できる温水プール施設。</p>
+          <article class="blog-post">
+            <img src="images/IMG_0509.jpeg" alt="体育館の風景3">
+            <h3>地域の体育挤舐</h3>
+            <p>体育を文武し、丸体的な活動を設しています。</p>
           </article>
         </div>
         <p><a href="facility.html">← 施設一覧に戻る</a></p>
@@ -74,8 +74,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>

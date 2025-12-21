@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>公共施設 | 鳥栖市紹介サイト</title>
+  <title>鳥栾市民会球場 | 鳥栾市紹介サイト</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,8 +36,8 @@
             <img src="images/K468_Original.jpg" alt="公共施設">
           </picture>
           <div class="hero-text">
-            <h2>公共施設</h2>
-            <p>市民生活を支える施設</p>
+            <h2>鳥栾市民会球場</h2>
+            <p>野球やソフトボールの竞技施設</p>
           </div>
         </div>
     </header>
@@ -49,24 +49,19 @@
       </section>
 
       <section class="gallery">
-        <h2>主な公共施設</h2>
-        <div class="vertical-cards">
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="公共施設1">
-            <h3>市役所</h3>
-            <p>各種行政手続きや相談ができる中心施設。</p>
+        <h2>鳥栾市民会球場について</h2>
+        <div class="blog-posts">
+          <article class="blog-post">
+            <img src="images/RIMG_0510.jpg" alt="球場の風景1">
+            <h3>野球やソフトボールの竞技施設</h3>
+            <p>鳥栾市民会球場は野球やソフトボールの竞技施設で、組合や中学、高校の大会等が開催されます。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="公共施設2">
-            <h3>保健センター</h3>
-            <p>健康診断や健康相談が受けられる施設。</p>
-          </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="公共施設3">
-            <h3>コミュニティセンター</h3>
-            <p>地域住民の交流と活動の拠点施設。</p>
+          <article class="blog-post">
+            <img src="images/IMG_0511.jpeg" alt="球場の風景2">
           </article>
         </div>
+        <p style="text-align: center; color: #ff6b6b; font-weight: bold; margin-top: 20px;">--- 更新中 ---</p>
+        <p style="text-align: center; color: #ff6b6b; font-weight: bold;">📝 このページは更新中です</p>
         <p><a href="facility.html">← 施設一覧に戻る</a></p>
       </section>
     </main>
@@ -74,8 +69,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>
