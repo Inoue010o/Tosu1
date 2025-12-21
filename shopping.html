@@ -44,9 +44,8 @@
 
 	<main>
 		<section class="gallery">
-			<h2>ショッピングモールの写真</h2>
-			<p>以下はサンプル画像です。実際の画像ファイルがあれば `images/` フォルダに追加してください。</p>
-			<div class="container">
+		<h2>ショッピングモール</h2>
+		<div class="container">
 				<a href="shopping-mall.html" class="card-link">
 					<article class="card">
 						<img src="images/RIMG_0787.jpeg" alt="ショッピング写真1">
@@ -69,9 +68,33 @@
 	<footer>
 		<p>© My Site</p>
 	</footer>
+
+	<!-- トップに戻るボタン -->
+	<button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
 	</div>
 
 	<script src="nav.js"></script>
+
+	<script>
+	// トップに戻るボタンの表示/非表示制御
+	const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+	const wrap = document.getElementById('wrap');
+
+	wrap.addEventListener('scroll', () => {
+		if (wrap.scrollTop > 300) {
+			scrollToTopBtn.classList.add('show');
+		} else {
+			scrollToTopBtn.classList.remove('show');
+		}
+	});
+
+	scrollToTopBtn.addEventListener('click', () => {
+		wrap.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	});
+	</script>
 </body>
 
 </html>
