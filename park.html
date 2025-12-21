@@ -44,12 +44,11 @@
 
     <main>
       <section class="gallery">
-        <h2>公園・緑地の写真</h2>
-        <p>以下はサンプル画像です。実際の画像ファイルがあれば `images/` フォルダに追加してください。</p>
+        <h2>公園・緑地</h2>
         <div class="container">
           <a href="park-urban.html" class="card-link">
             <article class="card">
-              <img src="images/KIMG_0627.png" alt="公園写真1">
+              <img src="images/KIMG_0627.jpg" alt="公園写真1">
               <h3>旭山公園</h3>
               <p>季節の草花が美しい公園</p>
             </article>
@@ -70,21 +69,21 @@
           </a>
           <a href="park-nature.html" class="card-link">
             <article class="card">
-              <img src="images/square.png" alt="公園写真4">
+              <img src="images/ochouzuKIMG_0747.jpg" alt="公園写真4">
               <h3>御手水の滝</h3>
               <p>自然の景観を感じられる滝</p>
             </article>
           </a>
-          <a href="park-urban.html" class="card-link">
+          <a href="park-kawachi-dam.html" class="card-link">
             <article class="card">
-              <img src="images/square.png" alt="公園写真5">
+              <img src="images/KIMG_0965.jpeg" alt="公園写真5">
               <h3>河内ダム</h3>
               <p>水のさざめきが心地よい</p>
             </article>
           </a>
-          <a href="park-green.html" class="card-link">
+          <a href="park-citizens-forest.html" class="card-link">
             <article class="card">
-              <img src="images/square.png" alt="公園写真6">
+              <img src="images/KIMG_0976.jpeg" alt="公園写真6">
               <h3>コカコーラ鳥栖市民の森</h3>
               <p>豊かな緑に包まれた森</p>
             </article>
@@ -97,8 +96,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>緑地スペース | 鳥栖市紹介サイト</title>
+  <title>田代公園 | 鳥栾市紹介サイト</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,7 +36,7 @@
             <img src="images/K468_Original.jpg" alt="緑地スペース">
           </picture>
           <div class="hero-text">
-            <h2>緑地スペース</h2>
+            <h2>田代公園</h2>
             <p>散策やピクニックに最適</p>
           </div>
         </div>
@@ -50,21 +50,16 @@
 
       <section class="gallery">
         <h2>緑地の様子</h2>
-        <div class="vertical-cards">
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="緑地の風景1">
-            <h3>芝生エリア</h3>
-            <p>広々とした芝生でリラックスできます。</p>
-          </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="緑地の風景2">
-            <h3>木陰の休憩スポット</h3>
-            <p>大きな木の下でゆったり休憩できます。</p>
-          </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="緑地の風景3">
+        <div class="blog-posts">
+          <article class="blog-post">
+            <img src="images/KIMG_0805.jpeg" alt="緑地の風景3">
             <h3>花壇</h3>
             <p>季節の花々が美しく咲き誇ります。</p>
+          </article>
+          <article class="blog-post">
+            <img src="images/KIMG_0806.jpeg" alt="緑地の風景4">
+            <h3>遊具エリア</h3>
+            <p>子どもたちが楽しく遊べる遊具が揃っています。</p>
           </article>
         </div>
         <p><a href="park.html">← 公園・緑地一覧に戻る</a></p>
@@ -74,8 +69,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>
