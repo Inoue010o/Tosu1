@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>史跡 | 鳥栖市紹介サイト</title>
+  <title>香榆宮 | 鳥栾市紹介サイト</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,8 +36,8 @@
             <img src="images/K468_Original.jpg" alt="史跡">
           </picture>
           <div class="hero-text">
-            <h2>史跡</h2>
-            <p>歴史を感じる場所</p>
+            <h2>香榆宮</h2>
+            <p>歴履深い神社</p>
           </div>
         </div>
     </header>
@@ -49,22 +49,22 @@
       </section>
 
       <section class="gallery">
-        <h2>主な史跡</h2>
-        <div class="vertical-cards">
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="史跡1">
-            <h3>古墳群</h3>
-            <p>古代の遺跡が残る歴史的価値の高い場所。</p>
+        <h2>香椎宮について</h2>
+        <div class="blog-posts">
+          <article class="blog-post">
+            <img src="images/IMG_0994.jpeg" alt="香椎宮の風景1">
+            <h3>歴履深い神社</h3>
+            <p>香椎宮は古い歴史を持った神社であり、多くの参試者を悠和をもたらしています。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="史跡2">
-            <h3>神社</h3>
-            <p>地域の人々に信仰されてきた由緒ある神社。</p>
+          <article class="blog-post">
+            <img src="images/BIMG_0812.jpeg" alt="香椎宮の風景2">
+            <h3>古倉としして知られる寺院</h3>
+            <p>慢光寺を次古倉としして知られ、文化財を足りこびれたいくつかの寺院があります。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="史跡3">
-            <h3>歴史的建造物</h3>
-            <p>昔の面影を残す貴重な建築物。</p>
+          <article class="blog-post">
+            <img src="images/BIMG_0605.jpg" alt="香椎宮の風景3">
+            <h3>文化遺産を伝える</h3>
+            <p>香椎宮とその周辺は、地域を代表する重要な文化遺産を残しています。</p>
           </article>
         </div>
         <p><a href="history.html">← 歴史・文化一覧に戻る</a></p>
@@ -74,8 +74,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>
