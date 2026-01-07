@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'images/square.png'
         ],
         gourmet: [
-            'images/うどん.jpg',
+            'images/u.jpg',
             'images/GIMG_2052.jpeg',
             'images/GIMG_2056.jpeg',
             'images/RIMG_0523.jpg',
