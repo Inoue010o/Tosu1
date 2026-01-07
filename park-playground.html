@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>遊具施設 | 鳥栖市紹介サイト</title>
+  <title>鳥栾市中央公園 | 鳥栾市紹介サイト</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,7 +36,7 @@
             <img src="images/K468_Original.jpg" alt="遊具施設">
           </picture>
           <div class="hero-text">
-            <h2>遊具施設</h2>
+            <h2>鳥栾市中央公園</h2>
             <p>子どもたちが楽しめる遊具</p>
           </div>
         </div>
@@ -50,19 +50,19 @@
 
       <section class="gallery">
         <h2>遊具の様子</h2>
-        <div class="vertical-cards">
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="遊具の風景1">
+        <div class="blog-posts">
+          <article class="blog-post">
+            <img src="images/KIMG_0588.jpg" alt="遊具の風景1">
             <h3>複合遊具</h3>
             <p>滑り台やネット遊びが一体となった大型遊具です。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="遊具の風景2">
+          <article class="blog-post">
+            <img src="images/KIMG_0589.jpg" alt="遊具の風景2">
             <h3>ブランコエリア</h3>
             <p>幼児用と児童用のブランコがあります。</p>
           </article>
-          <article class="card vertical-card">
-            <img src="images/square.png" alt="遊具の風景3">
+          <article class="blog-post">
+            <img src="images/KIMG_0591.jpg" alt="遊具の風景3">
             <h3>砂場</h3>
             <p>小さなお子様も安心して遊べる砂場です。</p>
           </article>
@@ -74,8 +74,32 @@
     <footer>
       <p>© My Site </p>
     </footer>
+
+    <!-- トップに戻るボタン -->
+    <button id="scrollToTopBtn" aria-label="トップに戻る">↑</button>
   </div>
   <script src="nav.js"></script>
+
+  <script>
+  // トップに戻るボタンの表示/非表示制御
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  const wrap = document.getElementById('wrap');
+
+  wrap.addEventListener('scroll', () => {
+    if (wrap.scrollTop > 300) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollToTopBtn.addEventListener('click', () => {
+    wrap.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  </script>
 </body>
 
 </html>
